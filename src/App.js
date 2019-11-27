@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from "react";
 import './App.css';
+import HelloScreen from './Routes/helloScreen';
+import BruteForce from "./Routes/bruteForce";
+import Netzplan from "./Routes/netzplan";
+import Sidebar from "./Components/sidebar"
+import Header from "./Components/header"
+import { Row, Col } from 'reactstrap';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+
+  render() {
+    return (
+      <div className="App" >
+        <Row>
+          <Col xl="2" lg="2">
+            <Sidebar />
+          </Col>
+          <Col xl="10" lg="10">
+            <Row>
+              <Col>
+                <Header />
+              </Col>
+            </Row>
+            <Row>
+              {/* <Col> */}
+              <Router>
+                <Route exact path="/" component={(props) => < HelloScreen {...props} />} />
+                <Route path="/bruteForce" component={(props) => < BruteForce {...props} />} />
+                <Route path="/netzplan" component={Netzplan} />
+              </Router>
+              {/* </Col> */}
+            </Row>
+          </Col>
+        </Row>
+      </div>
+    )
+  }
 }
 
 export default App;
