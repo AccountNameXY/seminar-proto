@@ -2,11 +2,13 @@
   "name": "seminar-proto",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://accountnamexy.github.io/seminar-proto/",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "chart.js": "^2.9.3",
     "echarts": "^4.5.0",
     "echarts-for-react": "^2.0.15-beta.1",
+    "gh-pages": "^2.1.1",
     "react": "^16.12.0",
     "react-beautiful-dnd": "^12.1.1",
     "react-chartjs-2": "^2.8.0",
@@ -19,6 +21,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

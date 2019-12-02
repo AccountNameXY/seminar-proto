@@ -15,13 +15,24 @@ class HelloScreen extends React.Component {
         return (
             <Col>
                 <Title>Herzlich Willkommen</Title>
-                <Text></Text>
+                <Text>
+                    Wir sind ein Team aus Studenten der TU Darmstadt und haben im Auftrag von Pickware diesen <br />
+                    Prototyp erstellt. Dieser soll helfen Personalisierungsschritte zu erfassen und zu visualisieren. <br />
+                    <br />
+
+
+                    Wir möchten sie einladen unseren Prototypen zu testen und uns zu helfen ihn zu verbessern
+
+                    <br />
+                    Falls sie einen Use-Case haben, testen sie gerne diesen. Ansonsten haben wir uns einen Use-Case für sie ausgedacht den sie nutzen können.
+
+                </Text>
                 <Row>
                     <Col>
-                        <Button onClick={() => this.handleClick(true)}>Mit eigenem UseCase <br /> fortfahren</Button>
+                        <Button onClick={() => this.handleClick(false)}>Mit eigenen Use-Case <br /> fortfahren</Button>
                     </Col>
                     <Col>
-                        <Button onClick={() => this.handleClick(false)}>Ohne eigenem UseCase<br /> beginnen</Button>
+                        <Button onClick={() => this.handleClick(true)}>Ohne eigenen Use-Case<br /> beginnen</Button>
                     </Col>
 
                 </Row>
@@ -31,7 +42,9 @@ class HelloScreen extends React.Component {
     }
 
     handleClick(bool) {
-        this.props.history.push("/bruteforce")
+
+        this.props.useCase(bool)
+        this.props.history.push("/netzplan")
     }
 
 

@@ -10,16 +10,18 @@ class BruteForce extends React.Component {
         super(props)
         this.props = props
         this.state = {
-            steps: [{ name: "Prozesschritt1", id: "item-0" }, { name: "Prozesschritt2", id: "item-1" }, { name: "Prozesschritt3", id: "item-2" }],
+            steps: [
+                // { name: "Prozesschritt1", id: "item-0" }, { name: "Prozesschritt2", id: "item-1" }, { name: "Prozesschritt3", id: "item-2" }
+            ],
             processes: [
-                {
-                    steps:
-                        [{ name: "Prozesschritt1", id: "proc-0-item-0" }, { name: "Prozesschritt2", id: "proc-0-item-1" }]
-                },
-                {
-                    steps:
-                        [{ name: "Prozesschritt1", id: "proc-1-item-0" }, { name: "Prozesschritt2", id: "proc-1-item-1" }]
-                }
+                // {
+                //     steps:
+                //         [{ name: "Prozesschritt1", id: "proc-0-item-0" }, { name: "Prozesschritt2", id: "proc-0-item-1" }]
+                // },
+                // {
+                //     steps:
+                //         [{ name: "Prozesschritt1", id: "proc-1-item-0" }, { name: "Prozesschritt2", id: "proc-1-item-1" }]
+                // }
             ],
             newValue: "",
             showNewDroppable: false
@@ -39,96 +41,52 @@ class BruteForce extends React.Component {
         const { steps, processes } = this.state
         return (
             <React.Fragment>
-                <Row>
-                    <Col>
-                        <Row>
-                            <Col >
-                                <Title>BruteForce</Title>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                <Subtitle>Ihre Aufgabe</Subtitle>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col>
-                                {config &&
-                                    <Text>{config.Aufgabe}</Text>
-                                }
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
+                <Background>
+                    <Row>
+                        <Col>
+                            <Row>
+                                <Col >
+                                    <Title>BruteForce</Title>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Subtitle>Ihre Aufgabe</Subtitle>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    {this.props.showuseCase ?
+                                        config &&
+                                        <React.Fragment>
+                                            <Text>{config.Aufgabe}</Text>
+                                            <Text>{config.ErweiterungBruteForce}</Text>
 
-                <DragDropContext onDragEnd={this.onDragEnd.bind(this)} onDragStart={this.onDragStart.bind(this)}>
-                    <Row >
-                        {/* INITIAL STEPS */}
-                        <Col >
-                            <Outline>
-                                <Text weight={"bold"}>Alle Ihre Personalisierungsschritte</Text>
-                                <Droppable droppableId="droppable-init" >
-                                    {(provided) => (
-                                        <div
-                                            ref={provided.innerRef}
-                                            {...provided.droppableProps}
-                                        >
-                                            {steps.length === 0 ?
-                                                null
-                                                :
-                                                steps.map((step, index) => {
-                                                    return (
-                                                        <Draggable key={step.id} draggableId={step.id} index={index}>
-                                                            {(provided) => (
-                                                                <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps}>
-                                                                    <Row key={index}>
-                                                                        <Col >
-                                                                            <Outline margin="1em">
-                                                                                {step.name !== "" ?
-                                                                                    <ButtonText>{step.name}</ButtonText>
-                                                                                    :
-                                                                                    <Input onChange={this.handleInput.bind(this)} placeholder="Benne Prozesschritt..." onBlur={() => this.addName(index)} onKeyDown={this.keyPressed} />
-                                                                                }
-                                                                                <Frame>
-                                                                                    <Dot src="dot.png" />
-                                                                                    <Number type={step.name === "" ? "input" : "reg"}>{index + 1}</Number>
-                                                                                </Frame>
-                                                                            </Outline>
-                                                                        </Col>
-                                                                    </Row>
+                                        </React.Fragment>
 
-                                                                </div>
-                                                            )}
-                                                        </Draggable>
-                                                    )
-                                                })
-                                            }
-                                            {provided.placeholder}
-                                            <Row>
-                                                <Col lg="auto">
-                                                    <Outline margin="2em">
-                                                        <ButtonText>Schritt Hinzufügen </ButtonText>
-                                                        <Add src="plus.svg" onClick={this.addMainStep.bind(this)} />
-                                                    </Outline>
-                                                </Col>
-                                            </Row>
-                                        </div>
-                                    )}
-                                </Droppable>
-                            </Outline>
+                                        :
+                                        <Text>{config.noUseCaseBruteForce}</Text>
+                                    }
+                                </Col>
+                            </Row>
                         </Col>
-                        {/* Processes */}
-                        {processes.length !== null &&
-                            processes.map((process, index) => (
-                                <Droppable droppableId={"droppable-" + index} key={index}>
-                                    {(provided) => (
-                                        <div
-                                            ref={provided.innerRef}
-                                            {...provided.droppableProps}>
-                                            <Col>
-                                                <Outline key={index} >
-                                                    <Text weight={"bold"}>Prozess {index + 1}</Text>
-                                                    {process.steps.map((step, index) => {
+                    </Row>
+                    <DragDropContext onDragEnd={this.onDragEnd.bind(this)} onDragStart={this.onDragStart.bind(this)}>
+                        <Row >
+                            {/* INITIAL STEPS */}
+                            <Col lg="4">
+                                <Outline>
+                                    <Text weight={"bold"}>Alle Ihre Personalisierungsschritte</Text>
+                                    <Droppable droppableId="droppable-init" >
+                                        {(provided) => (
+                                            <div
+                                                ref={provided.innerRef}
+                                                {...provided.droppableProps}
+                                            >
+                                                {steps.length === 0 ?
+                                                    null
+                                                    :
+                                                    steps.map((step, index) => {
                                                         return (
                                                             <Draggable key={step.id} draggableId={step.id} index={index}>
                                                                 {(provided) => (
@@ -136,14 +94,14 @@ class BruteForce extends React.Component {
                                                                         <Row key={index}>
                                                                             <Col >
                                                                                 <Outline margin="1em">
-                                                                                    {process.name !== "" ?
+                                                                                    {step.name !== "" ?
                                                                                         <ButtonText>{step.name}</ButtonText>
                                                                                         :
-                                                                                        <Input onChange={this.handleInput.bind(this)} onBlur={() => this.addName(index)} />
+                                                                                        <Input onChange={this.handleInput.bind(this)} placeholder="Benne Prozesschritt..." onBlur={() => this.addName(index)} onKeyDown={this.keyPressed} />
                                                                                     }
                                                                                     <Frame>
                                                                                         <Dot src="dot.png" />
-                                                                                        <Number>{index + 1}</Number>
+                                                                                        <Number type={step.name === "" ? "input" : "reg"}>{index + 1}</Number>
                                                                                     </Frame>
                                                                                 </Outline>
                                                                             </Col>
@@ -153,34 +111,85 @@ class BruteForce extends React.Component {
                                                                 )}
                                                             </Draggable>
                                                         )
-                                                    })}
-                                                    {provided.placeholder}
-                                                </Outline>
-                                            </Col>
-                                        </div>
-                                    )}
-                                </Droppable>
-                            ))
-                        }
-                    </Row>
-                    {/* NEW Process */}
-                    <Wrapper>
+                                                    })
+                                                }
+                                                {provided.placeholder}
+                                                <Row>
+                                                    <Col lg="auto">
+                                                        <Outline margin="2em">
+                                                            <ButtonText>Schritt Hinzufügen </ButtonText>
+                                                            <Add src="plus.svg" onClick={this.addMainStep.bind(this)} />
+                                                        </Outline>
+                                                    </Col>
+                                                </Row>
+                                            </div>
+                                        )}
+                                    </Droppable>
+                                </Outline>
+                            </Col>
+                            {/* Processes */}
+                            {processes.length !== 0 &&
+                                processes.map((process, index) => (
+                                    <Col lg="4" key={index}>
+                                        <Droppable droppableId={"droppable-" + index} key={index}>
+                                            {(provided) => (
+                                                <div
+                                                    ref={provided.innerRef}
+                                                    {...provided.droppableProps}>
+                                                    <Outline key={index}  >
+                                                        <Text weight={"bold"}>Prozess {index + 1}</Text>
+                                                        {process.steps.map((step, index) => {
+                                                            return (
+                                                                <Draggable key={step.id} draggableId={step.id} index={index}>
+                                                                    {(provided) => (
+                                                                        <div ref={provided.innerRef} {...provided.dragHandleProps} {...provided.draggableProps}>
+                                                                            <Row key={index}>
+                                                                                <Col >
+                                                                                    <Outline margin="1em" >
+                                                                                        {process.name !== "" ?
+                                                                                            <ButtonText>{step.name}</ButtonText>
+                                                                                            :
+                                                                                            <Input onChange={this.handleInput.bind(this)} onBlur={() => this.addName(index)} />
+                                                                                        }
+                                                                                        <Frame>
+                                                                                            <Dot src="dot.png" />
+                                                                                            <Number>{index + 1}</Number>
+                                                                                        </Frame>
+                                                                                    </Outline>
+                                                                                </Col>
+                                                                            </Row>
+
+                                                                        </div>
+                                                                    )}
+                                                                </Draggable>
+                                                            )
+                                                        })}
+                                                        {provided.placeholder}
+                                                    </Outline>
+                                                </div>
+                                            )}
+                                        </Droppable>
+                                    </Col>
+                                ))
+                            }
+                        </Row>
+                        {/* NEW Process */}
                         <Droppable droppableId="droppable-new">
                             {(provided) => (
-                                <div
-                                    ref={provided.innerRef}
-                                    {...provided.droppableProps}>
-                                    <Outline>
-                                        Personalisierungsschritte in dieses <br /> Feld ziehen um neuen Prozess zu erstellen
+                                <Wrapper>
+                                    <div
+                                        ref={provided.innerRef}
+                                        {...provided.droppableProps}>
+                                        <Outline>
+                                            Personalisierungsschritte in dieses <br /> Feld ziehen um neuen Prozess zu erstellen
                                     </Outline>
-                                    {provided.placeholder}
-
-                                </div>
+                                    </div>
+                                </Wrapper>
                             )}
                         </Droppable>
-                    </Wrapper>
-                </DragDropContext>
-                <Button onClick={() => this.props.history.push("/netzplan")}>Zur Nächsten Option</Button>
+                    </DragDropContext>
+                    <Button onClick={() => this.props.history.push("/byeScreen")}>Weiter</Button>
+                </Background>
             </React.Fragment >
         )
     }
@@ -247,10 +256,11 @@ class BruteForce extends React.Component {
         if (result.destination.droppableId === "droppable-new") {
             const newProcess = {
                 steps: [
-                    { name: this.state.steps[result.source.index].name, index: "proc-" + this.state.processes.length + "-item-0" }
+                    { name: this.state.steps[result.source.index].name, id: "proc-" + this.state.processes.length + "-item-0" }
                 ]
             }
             processes.push(newProcess)
+            // console.log(newProcess);
             this.setState({ processes: processes })
         }
     }
@@ -270,8 +280,9 @@ class BruteForce extends React.Component {
 
     addMainStep() {
         const steps = [...this.state.steps]
-        var draggableID = steps[steps.length - 1].id.slice(-1) + 1
+        var draggableID = steps.length === 0 ? 0 : steps[steps.length - 1].id.slice(-1) + 1
         steps.push({ name: "", id: `item-${draggableID}`, substeps: [] })
+
         this.setState({ steps: steps })
     }
 
@@ -320,10 +331,11 @@ const Number = styled.div`
 `
 
 const Input = styled.input`
-border: 1px solid #D8DDE6;
-padding: 0.25em 0.5em;
-outline: none
-    `
+    border: 1px solid #D8DDE6;
+    padding: 0.25em 0.5em;
+    outline: none;
+    width: 80%
+`
 
 const Title = styled.h1`
 font - weight: bold;
@@ -352,15 +364,20 @@ width: 1.2rem;
 margin - left: 1em
     `
 
+const Background = styled.div`
+width: 100%;
+background-color: #FAFBFC;
+`
+
 const Outline = styled.div`
 border: 1px solid #D8DDE6;
-min - width: 5em;
-border - radius: 3px;
+min-width: 5em;
+border-radius: 3px;
 padding: 1em 0.5em;
-margin: 2em 5em;
+// margi    n: 2em 5em;
 display: inline - block;
-cursor: pointer;
-margin: ${ props => props.margin ? props.margin : null}
+cursor: ${props => props.cursor ? null : "pointer"};
+margin: ${ props => props.margin ? props.margin : "2em 5em"}
     : hover{
     border: 1px solid #54698D
 }

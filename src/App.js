@@ -6,13 +6,20 @@ import Netzplan from "./Routes/netzplan";
 import Sidebar from "./Components/sidebar"
 import Header from "./Components/header"
 import { Row, Col } from 'reactstrap';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
+import ByeScreen from "./Routes/byeScreen";
 
 
 class App extends Component {
-
+  constructor(props) {
+    super(props)
+    this.props = props
+    this.state = {}
+    this.useCase = this.useCase.bind(this)
+  }
 
   render() {
+    const { showUseCase } = this.state
     return (
       <div className="App" >
         <Row>
@@ -26,18 +33,22 @@ class App extends Component {
               </Col>
             </Row>
             <Row>
-              {/* <Col> */}
               <Router>
-                <Route exact path="/" component={(props) => < HelloScreen {...props} />} />
-                <Route path="/bruteForce" component={(props) => < BruteForce {...props} />} />
-                <Route path="/netzplan" component={Netzplan} />
+                <Route exact path="/" component={(props) => < HelloScreen {...props} useCase={this.useCase} />} />
+                <Route path="/bruteForce" component={(props) => < BruteForce {...props} showUseCase={showUseCase} />} />
+                <Route path="/netzplan" component={(props) => < Netzplan {...props} showUseCase={showUseCase} />} />
+                <Route path="/byeScreen" component={(props) => < ByeScreen {...props} showUseCase={showUseCase} />} />
               </Router>
-              {/* </Col> */}
             </Row>
           </Col>
         </Row>
       </div>
     )
+  }
+
+  useCase(bool) {
+    console.log("object");
+    this.setState({ showUseCase: bool })
   }
 }
 

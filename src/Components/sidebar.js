@@ -15,7 +15,7 @@ class Sidebar extends React.Component {
             <Wrapper>
                 <Stickyness>
                     <Logo src="logo.png" />
-                    <Topbar >PERSONALISE YOUR SHIT</Topbar>
+                    <Topbar >PERSONALISE YOUR PICKING</Topbar>
                 </Stickyness>
             </Wrapper>
         )
