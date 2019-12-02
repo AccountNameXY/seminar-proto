@@ -85,7 +85,6 @@ class Graph extends React.Component {
                     }
                     for (var nextProcessIndex = processIndex + 1; nextProcessIndex < this.props.data.length; nextProcessIndex++) {
                         if (this.props.data[nextProcessIndex].subtypes === undefined) {
-                            console.log(subtype, this.props.data[nextProcessIndex]);
 
                             var link = {
                                 source: subtype.name,
@@ -127,8 +126,8 @@ class Graph extends React.Component {
         })
 
         var allLinks = this.addEndpoints(links, flattendData)
+
         bubbles.splice(0, 0, { name: "S", x: 200, y: 0, itemStyle: { color: '#57D9A3' }, symbolSize: "50" })
-        console.log(allLinks);
         return [bubbles, allLinks]
     }
 
@@ -148,6 +147,8 @@ class Graph extends React.Component {
             }
 
         })
+        links.push({ source: "S", target: "X" })
+
         return links
     }
 

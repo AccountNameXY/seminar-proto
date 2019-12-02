@@ -97,7 +97,6 @@ class Netzplan extends React.Component {
             showInput: [],
             showNetzplan: false
         }
-        console.log(props);
         this.handleChange = this.handleChange.bind(this)
     }
 
@@ -126,7 +125,6 @@ class Netzplan extends React.Component {
                         </Row>
                         <Row>
                             <Col>
-                                {console.log(this.props.showUseCase)}
                                 {this.props.showUseCase ?
 
                                     config &&
@@ -150,7 +148,15 @@ class Netzplan extends React.Component {
                     showNetzplan ?
                         <React.Fragment>
                             <Graph data={data} />
-                            <Button active={true} onClick={() => this.setState({ showNetzplan: false })}>zurückspringen</Button>
+                            <Row>
+                                <Col lg="6">
+                                    <Button active={true} onClick={() => this.setState({ showNetzplan: false })}>zurückspringen</Button>
+                                </Col>
+                                <Col lg="6">
+                                    <Button color={"#57D9A3"} onClick={() => this.props.history.push("bruteforce")}>Zur Nächsten Aufgabe</Button>
+                                </Col>
+                            </Row>
+
                         </React.Fragment>
                         :
                         <React.Fragment>
@@ -263,6 +269,7 @@ class Netzplan extends React.Component {
                             </Row>
                         </React.Fragment>
                 }
+                <Space></Space>
             </Background >
         )
     }
@@ -306,7 +313,6 @@ class Netzplan extends React.Component {
         if (data[index].subtypes === undefined) {
             data[index].subtypes = []
         }
-        console.log(showInput);
         data[index].subtypes.push({ name: this.state.inputValue[index], type: "s", allowBackstep: true })
 
         this.setState({ data: data, showInput: showInput })
@@ -319,13 +325,17 @@ margin: 1em auto;
 `
 
 const Button = styled.button`
-    background-color: ${props => props.active ? "#F64747" : "grey"};
+    background-color: ${props => props.color ? props.color : props.active ? "#F64747" : "grey"};
     color: white;
     margin: 3em auto;
     border: none;
     padding: 2em;
     border-radius: 5px;
     outline: none
+`
+
+const Space = styled.div`
+    margin-bottom: 30em
 `
 
 

@@ -47,7 +47,6 @@ class App extends Component {
   }
 
   useCase(bool) {
-    console.log("object");
     this.setState({ showUseCase: bool })
   }
 }

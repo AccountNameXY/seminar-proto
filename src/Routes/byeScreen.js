@@ -14,10 +14,16 @@ class ByeScreen extends React.Component {
 
     render() {
         return (
+
             <React.Fragment>
-                <Title>Feedback</Title>
-                <Text>{config.danksagung}</Text>
-                <Button onClick={this.handleClick}>Zur Umfrage</Button>
+                <Row>
+                    <Title>Feedback</Title>
+                    <Text>{config.danksagung}</Text>
+                    <Button onClick={this.handleClick}>Zur Umfrage</Button>
+                </Row>
+                <Row>
+                    <Space></Space>
+                </Row>
             </React.Fragment>
         )
     }
@@ -30,6 +36,9 @@ class ByeScreen extends React.Component {
 const Title = styled.h1`
 font - weight: bold;
 margin: 0.5em auto;
+`
+const Space = styled.div`
+    margin-bottom: 30em
 `
 
 const Text = styled.div`
