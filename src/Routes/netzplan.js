@@ -130,7 +130,7 @@ class Netzplan extends React.Component {
                                     config &&
                                     <React.Fragment>
                                         < Text >{config.Aufgabe}</Text><br />
-                                        <Text>Lassen sie sich darauf ihren Personalisierten Netzplan erstellen.</Text><br />
+                                        <Text>Lassen Sie sich daraufhin Ihren personalisierten Netzplan erstellen.</Text><br />
                                     </React.Fragment>
                                     :
                                     <Text>{config.noUseCaseNetzplan}</Text>

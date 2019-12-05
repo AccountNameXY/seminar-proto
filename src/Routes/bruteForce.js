@@ -72,14 +72,15 @@ class BruteForce extends React.Component {
                                             </Text>
                                             <Text>Zunächst werden alle Prozesschritte erstellt und daraufhin per Drag-and-Drop die möglichen Kombinationen abgebildet. </Text>
                                             <Text>{config.Aufgabe}</Text>
-                                            <Text>{config.ErweiterungBruteForce}</Text>
+                                            {/* <Text>{config.ErweiterungBruteForce}</Text> */}
 
                                             <Text>
-                                                Sie möchten nun aber nur drei verschiedene Kombinationen der Personalisierungsschritte in Ihrem Onlineshop anbieten
+                                                Sie möchten nun aber nur drei verschiedene Kombinationen der Personalisierungsschritte in Ihrem Onlineshop anbieten.
                                                 <br />
-                                                1. digitaler Direktdruck  =>  Qualitätscheck  => Geschenkverpackung
                                                 <br />
-                                                2. bestickt  =>  Geschenkverpackung
+                                                1. Digitaler Direktdruck  =>  Qualitätscheck  => Geschenkverpackung
+                                                <br />
+                                                2. Bestickt  =>  Geschenkverpackung
                                                 <br />
                                                 3. Siebdruck  =>  Qualitätscheck
 
@@ -102,7 +103,7 @@ class BruteForce extends React.Component {
                             {/* INITIAL STEPS */}
                             <Col lg="4" xl="4">
                                 <Outline>
-                                    <Text weight={"bold"}>Alle Ihre Personalisierungsschritte</Text>
+                                    <Text weight={"bold"}>Alle Personalisierungsschritte</Text>
                                     <Droppable droppableId="droppable-init" >
                                         {(provided) => (
                                             <div

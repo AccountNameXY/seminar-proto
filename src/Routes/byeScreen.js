@@ -14,23 +14,17 @@ class ByeScreen extends React.Component {
 
     render() {
         return (
-
             <React.Fragment>
-                <Row>
-                    <Col>
-                        <Title>Feedback</Title>
-                    </Col>
-                </Row>
-                <Text>Vielen Dank, dass Sie an diesem Experiment teilgenommen haben. </Text>
-                <Text>Uns ist es wichtig Feedback zu unserem Prototypen zu erhalten.Daher haben wir hierfür eine Umfrage eingerichtet.</Text>
-                <Row>
-                    <Col>
-                        <Button onClick={this.handleClick}>Zur Umfrage</Button>
-                    </Col>
-                </Row>
-                <Row>
+                <Col>
+                    <Title>Feedback</Title>
+                    <Text>Vielen Dank, dass Sie an diesem Experiment teilgenommen haben. </Text>
+                    <Text>Uns ist es wichtig Feedback zu unserem Prototyp zu erhalten.Daher haben wir hierfür eine Umfrage eingerichtet.</Text>
+
+                    <Button onClick={this.handleClick}>Zur Umfrage</Button>
+
                     <Space></Space>
-                </Row>
+                </Col>
+
             </React.Fragment>
         )
     }
@@ -41,17 +35,17 @@ class ByeScreen extends React.Component {
 }
 
 const Title = styled.h1`
-font - weight: bold;
-margin: 0.5em auto;
+    font - weight: bold;
+    margin: 0.5em auto;
 `
 const Space = styled.div`
     margin-bottom: 30em
 `
 
 const Text = styled.div`
-margin: 1em auto;
- padding: 0 5 %;
-font - weight: ${ props => props.weight ? props.weight : null}
+    margin: 1em auto;
+    padding: 0 5 %;
+    font - weight: ${ props => props.weight ? props.weight : null}
 `
 
 
