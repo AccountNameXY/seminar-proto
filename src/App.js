@@ -35,9 +35,9 @@ class App extends Component {
             <Row>
               <Router>
                 <Route exact path="/" component={(props) => < HelloScreen {...props} useCase={this.useCase} />} />
-                <Route path="/bruteForce" component={(props) => < BruteForce {...props} showUseCase={showUseCase} />} />
-                <Route path="/netzplan" component={(props) => < Netzplan {...props} showUseCase={showUseCase} />} />
-                <Route path="/byeScreen" component={(props) => < ByeScreen {...props} showUseCase={showUseCase} />} />
+                <Route path="/bruteForce" component={(props) => < BruteForce {...props} showUseCase={true} />} />
+                <Route path="/netzplan" component={(props) => < Netzplan {...props} showUseCase={true} />} />
+                <Route path="/byeScreen" component={(props) => < ByeScreen {...props} showUseCase={false} />} />
               </Router>
             </Row>
           </Col>

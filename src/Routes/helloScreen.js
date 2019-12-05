@@ -16,22 +16,28 @@ class HelloScreen extends React.Component {
             <Col>
                 <Title>Herzlich Willkommen</Title>
                 <Text>
-                    Wir sind ein Team aus Studenten der TU Darmstadt und haben im Auftrag von Pickware diesen <br />
-                    Prototyp erstellt. Dieser soll helfen Personalisierungsschritte zu erfassen und zu visualisieren. <br />
+                    Wir sind ein Team aus Studenten der TU Darmstadt und haben aufbauend auf dem Warenwirtschaftssytem von Pickware einen<br />
+                    Prototypen erstellt, der helfen soll, Individualisierungsprozesse zu erfassen und zu visualisieren. Dabei könnte es sich um Personalisierungs- und Herstellungsprozesse handeln.<br />
                     <br />
-                    Pickware möchte die bisherigen Produktfunktionen erweitern und in Zukunft gegebenenfalls auch Herstellungs- und Personalisierungsprozesse von Produkten aufnehmen. Die Erstellung der Endprodukte, benötigter Ressourcen, sowie die dazu nötigen Prozessschritte erfolgt online in der Shopware-Oberfläche. Anschließend erscheint der zur Bestellung des Kunden passende Herstellungsablauf in der Versand-App. der anschließende Fragebogen beschäftigt sich jedoch exklusiv mit der Erstellung von Prozessen bei Herstellung und Personalisierung hin zum fertigen Endprodukt.
-                    In Ihrer Mail haben sie Zugriff auf unseren Server erhalten, auf dem die zu testenden Dateien liegen. Es handelt sich hierbei um eine experimentelle Web-Umgebung (später ähnlich eingebunden in Shopware), in der Sie unsere Aufgabe zu einer beispielhaften Erstellung eines Herstellungsprozesses bearbeiten können. Sollten Sie eigene Produkte herstellen oder personalisieren, so können Sie das Web-Tool auch mit Ihren eigenen Produkten testen. Bitte erstellen Sie vor dem Ausfüllen des Fragebogens einen Herstellungsprozess.
+                    Der Prototyp beinhaltet zwei unterschiedliche Arten Individualisierungsschritte abzubilden.
+                    <br />
+                    Die erste Variante konzentriert sich darauf, den Ablauf aller Schritte zu visualisieren und automatisch zu organisieren.
+                    <br />
+                    Die zweite Variante lässt Sie alle Möglichen selbst organisieren. Dabei nutzen Sie ein Drag-and-Drop-System.
+                    <br />
+                    Um die beiden Varianten zu testen, haben wir uns einen Usecase ausgedacht, den Sie mit dem Prototypen abbilden sollen.
+                    <br />
+                    Falls Sie über die Aufgabe hinaus weitere Prozesschritte abbilden möchten, können sie dies natürlich auch sehr gerne tun.
                     <br />
                     <br />
-                    Falls sie einen Use-Case haben, testen sie gerne diesen. Falls nicht, haben wir uns einen Use-Case für sie ausgedacht, den sie nutzen können.
-
+                    Viel Spaß
                 </Text>
                 <Row>
-                    <Col>
+                    {/* <Col>
                         <Button onClick={() => this.handleClick(false)}>Mit eigenen Use-Case <br /> fortfahren</Button>
-                    </Col>
+                    </Col> */}
                     <Col>
-                        <Button onClick={() => this.handleClick(true)}>Ohne eigenen Use-Case<br /> beginnen</Button>
+                        <Button onClick={() => this.handleClick(true)}>Prototyp testen</Button>
                     </Col>
 
                 </Row>

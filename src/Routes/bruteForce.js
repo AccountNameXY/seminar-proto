@@ -46,7 +46,7 @@ class BruteForce extends React.Component {
                         <Col>
                             <Row>
                                 <Col >
-                                    <Title>BruteForce</Title>
+                                    <Title>Variante 2</Title>
                                 </Col>
                             </Row>
                             <Row>
@@ -59,22 +59,48 @@ class BruteForce extends React.Component {
                                     {this.props.showUseCase ?
                                         config &&
                                         <React.Fragment>
+                                            <Text>Im Vergleich zu Variante 1, erstellt sich dieses System nach Fertigstellung
+                                                der möglichen Prozessschritte nicht selbst und bildet dabei auch nicht alle möglichen
+                                                Kombinationen ab.
+                                                Dies hat folgenden Grund: Falls Sie nun in Ihrem Onlineshop ein personalisiertes
+                                                T-Shirt anbieten, so hat der Nutzer häufig verschiedene Auswahlmöglichkeiten
+                                                bei der Bestellung (in dieser Aufgabe: Druckarten mit Input, Qualitätscheck
+                                                und Verpackung).
+                                                Für jede mögliche Kombination, die Sie in Ihrem Onlineshop anbieten möchten, erstellen
+                                                Sie dann einen eigenen Herstellungsablauf. Dabei muss dann auch nicht mehr in
+                                                Prozessschritt und Subtyp unterschieden werden, da direkt der Subtyp eingesetzt wird.
+                                            </Text>
+                                            <Text>Zunächst werden alle Prozesschritte erstellt und daraufhin per Drag-and-Drop die möglichen Kombinationen abgebildet. </Text>
                                             <Text>{config.Aufgabe}</Text>
                                             <Text>{config.ErweiterungBruteForce}</Text>
 
+                                            <Text>
+                                                Sie möchten nun aber nur drei verschiedene Kombinationen der Personalisierungsschritte in Ihrem Onlineshop anbieten
+                                                <br />
+                                                1. digitaler Direktdruck  =>  Qualitätscheck  => Geschenkverpackung
+                                                <br />
+                                                2. bestickt  =>  Geschenkverpackung
+                                                <br />
+                                                3. Siebdruck  =>  Qualitätscheck
+
+                                            </Text>
                                         </React.Fragment>
 
                                         :
+
                                         <Text>{config.noUseCaseBruteForce}</Text>
+
                                     }
+
                                 </Col>
                             </Row>
+
                         </Col>
                     </Row>
                     <DragDropContext onDragEnd={this.onDragEnd.bind(this)} onDragStart={this.onDragStart.bind(this)}>
                         <Row >
                             {/* INITIAL STEPS */}
-                            <Col lg="4">
+                            <Col lg="4" xl="4">
                                 <Outline>
                                     <Text weight={"bold"}>Alle Ihre Personalisierungsschritte</Text>
                                     <Droppable droppableId="droppable-init" >
@@ -117,7 +143,7 @@ class BruteForce extends React.Component {
                                                 <Row>
                                                     <Col lg="auto">
                                                         <Outline margin="2em">
-                                                            <ButtonText>Schritt Hinzufügen </ButtonText>
+                                                            <ButtonText>Schritt hinzufügen </ButtonText>
                                                             <Add src="plus.svg" onClick={this.addMainStep.bind(this)} />
                                                         </Outline>
                                                     </Col>
@@ -130,7 +156,7 @@ class BruteForce extends React.Component {
                             {/* Processes */}
                             {processes.length !== 0 &&
                                 processes.map((process, index) => (
-                                    <Col lg="4" key={index}>
+                                    <Col lg="4" xl="4" key={index}>
                                         <Droppable droppableId={"droppable-" + index} key={index}>
                                             {(provided) => (
                                                 <div
@@ -181,7 +207,7 @@ class BruteForce extends React.Component {
                                         ref={provided.innerRef}
                                         {...provided.droppableProps}>
                                         <Outline>
-                                            Personalisierungsschritte in dieses <br /> Feld ziehen um neuen Prozess zu erstellen
+                                            Personalisierungsschritte in dieses <br /> Feld ziehen, um neuen Prozess zu erstellen.
                                     </Outline>
                                     </div>
                                 </Wrapper>

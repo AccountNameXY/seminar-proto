@@ -14,8 +14,8 @@ class Sidebar extends React.Component {
         return (
             <Wrapper>
                 <Stickyness>
-                    <Logo src="logo.png" />
-                    <Topbar >PERSONALISE YOUR PICKING</Topbar>
+                    <Logo src="tud_logo.png" />
+                    <Topbar>Cross Domain Challenge</Topbar>
                 </Stickyness>
             </Wrapper>
         )

@@ -17,9 +17,16 @@ class ByeScreen extends React.Component {
 
             <React.Fragment>
                 <Row>
-                    <Title>Feedback</Title>
-                    <Text>{config.danksagung}</Text>
-                    <Button onClick={this.handleClick}>Zur Umfrage</Button>
+                    <Col>
+                        <Title>Feedback</Title>
+                    </Col>
+                </Row>
+                <Text>Vielen Dank, dass Sie an diesem Experiment teilgenommen haben. </Text>
+                <Text>Uns ist es wichtig Feedback zu unserem Prototypen zu erhalten.Daher haben wir hierfür eine Umfrage eingerichtet.</Text>
+                <Row>
+                    <Col>
+                        <Button onClick={this.handleClick}>Zur Umfrage</Button>
+                    </Col>
                 </Row>
                 <Row>
                     <Space></Space>

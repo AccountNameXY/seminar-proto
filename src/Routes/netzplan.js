@@ -115,7 +115,7 @@ class Netzplan extends React.Component {
                     <Col>
                         <Row>
                             <Col >
-                                <Title>Netzplan 2.0</Title>
+                                <Title>Variante 1</Title>
                             </Col>
                         </Row>
                         <Row>
@@ -153,19 +153,18 @@ class Netzplan extends React.Component {
                                     <Button active={true} onClick={() => this.setState({ showNetzplan: false })}>zurückspringen</Button>
                                 </Col>
                                 <Col lg="6">
-                                    <Button color={"#57D9A3"} onClick={() => this.props.history.push("bruteforce")}>Zur Nächsten Aufgabe</Button>
+                                    <Button color={"#57D9A3"} onClick={() => this.props.history.push("bruteforce")}>Zur nächsten Aufgabe</Button>
                                 </Col>
                             </Row>
 
                         </React.Fragment>
                         :
                         <React.Fragment>
-                            <Row>
+                            {/* <Row>
                                 <Col lg="3">
                                     <Text margin={"1em 0 0 0"}>Erstelle einen Schritt</Text>
-
                                 </Col>
-                            </Row>
+                            </Row> */}
                             <Row>
                                 <Col>
                                     <WhiteFrame color={"white"} >
@@ -249,9 +248,9 @@ class Netzplan extends React.Component {
                                                     <Wrapper>
                                                         <Outline onClick={showInput[data.length] === true ? null : () => this.showInput(data.length)} >
                                                             {showInput[data.length] === true ?
-                                                                <Input placeholder="Prozesschritt bennen" onKeyDown={((e) => this.handleKeyDown(e, data.length, "main"))} onChange={(e) => this.handleChange(e, data.length)}></Input>
+                                                                <Input placeholder="Prozessschritt bennen" onKeyDown={((e) => this.handleKeyDown(e, data.length, "main"))} onChange={(e) => this.handleChange(e, data.length)}></Input>
                                                                 :
-                                                                <ButtonText>Prozesschritt Hinzufügen</ButtonText>
+                                                                <ButtonText>Prozessschritt hinzufügen</ButtonText>
                                                             }
                                                             <Add src="plus.svg" onClick={showInput[data.length] === true ? () => this.addProcess() : null} />
                                                         </Outline>
@@ -321,7 +320,7 @@ class Netzplan extends React.Component {
 
 const Title = styled.h1`
 font-weight: bold;
-margin: 1em auto; 
+margin: 0.5em auto; 
 `
 
 const Button = styled.button`

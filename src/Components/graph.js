@@ -121,13 +121,13 @@ class Graph extends React.Component {
             }
 
             if (processIndex === this.props.data.length - 1) {
-                bubbles.push({ name: "X", x: 200, y: (processIndex + 2) * 50, itemStyle: { color: '#F64747' }, symbolSize: "50" })
+                bubbles.push({ name: "End", x: 200, y: (processIndex + 2) * 50, itemStyle: { color: '#F64747' }, symbolSize: "50" })
             }
         })
 
         var allLinks = this.addEndpoints(links, flattendData)
 
-        bubbles.splice(0, 0, { name: "S", x: 200, y: 0, itemStyle: { color: '#57D9A3' }, symbolSize: "50" })
+        bubbles.splice(0, 0, { name: "Start", x: 200, y: 0, itemStyle: { color: '#F64747' }, symbolSize: "50" })
         return [bubbles, allLinks]
     }
 
@@ -135,19 +135,19 @@ class Graph extends React.Component {
         flattendData.forEach(p => {
             if (p.type !== 0) {
                 var link1 = {
-                    source: "S",
+                    source: "Start",
                     target: p.name
                 }
                 var link2 = {
                     source: p.name,
-                    target: "X"
+                    target: "End"
                 }
                 links.push(link1)
                 links.push(link2)
             }
 
         })
-        links.push({ source: "S", target: "X" })
+        links.push({ source: "Start", target: "End" })
 
         return links
     }

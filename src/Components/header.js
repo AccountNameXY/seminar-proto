@@ -16,7 +16,7 @@ class Sidebar extends React.Component {
             <React.Fragment>
                 <Row>
                     <Col xl={{ size: 6, offset: 3 }} lg={{ size: 6, offset: 3 }} >
-                        <Input placeholder="Finde Produkte, Kunden, Bestellungen !" />
+                        <Input placeholder="Finde Produkte, Kunden oder Bestellungen !" />
                     </Col>
                 </Row>
                 <Row>
@@ -26,7 +26,7 @@ class Sidebar extends React.Component {
                 </Row>
                 <Row>
                     <Col xl={{ size: "auto", offset: 0 }} lg={{ size: "auto", offset: 0 }} >
-                        <Text>Individualierungsprozess</Text>
+                        <Text>Individualisierungsprozess</Text>
                     </Col>
                 </Row>
                 <Row>
