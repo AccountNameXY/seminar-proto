@@ -56,7 +56,7 @@ class BruteForce extends React.Component {
                             </Row>
                             <Row>
                                 <Col>
-                                    {this.props.showuseCase ?
+                                    {this.props.showUseCase ?
                                         config &&
                                         <React.Fragment>
                                             <Text>{config.Aufgabe}</Text>
