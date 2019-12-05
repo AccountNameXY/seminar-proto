@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dc889f8ddf1a0094b3b8168f76bd74ad",
+    "revision": "913e64d9b309e378c78e079b13006181",
     "url": "/seminar-proto/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/seminar-proto/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "7be957bb91933da81ac7",
+    "revision": "d7f107a0eefab2011bfd",
     "url": "/seminar-proto/static/css/main.b55cbedb.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/seminar-proto/static/js/2.505820b8.chunk.js"
   },
   {
-    "revision": "7be957bb91933da81ac7",
-    "url": "/seminar-proto/static/js/main.55dbc373.chunk.js"
+    "revision": "d7f107a0eefab2011bfd",
+    "url": "/seminar-proto/static/js/main.d98686a5.chunk.js"
   },
   {
     "revision": "00c50c552bbf71b68df6",
