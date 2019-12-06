@@ -213,7 +213,7 @@ class Netzplan extends React.Component {
                                                                                     <Row>
                                                                                         <Outline onClick={showInput[processIndex] === true ? null : () => this.showInput(processIndex)}>
                                                                                             {showInput[processIndex] === true ?
-                                                                                                <Input placeholder="Subtypen bennen" onKeyDown={((e) => this.handleKeyDown(e, processIndex, "sub"))} onChange={(e) => this.handleChange(e, processIndex)}></Input>
+                                                                                                <Input placeholder="Subtypen benennen" onKeyDown={((e) => this.handleKeyDown(e, processIndex, "sub"))} onChange={(e) => this.handleChange(e, processIndex)}></Input>
                                                                                                 :
                                                                                                 <ButtonText>Subtypen hinzufügen</ButtonText>
                                                                                             }
@@ -228,7 +228,7 @@ class Netzplan extends React.Component {
                                                                         <Row>
                                                                             <Outline onClick={showInput[processIndex] === true ? null : () => this.showInput(processIndex)} >
                                                                                 {showInput[processIndex] === true ?
-                                                                                    <Input placeholder="Subtypen bennen" onKeyDown={((e) => this.handleKeyDown(e, processIndex, "sub"))} onChange={(e) => this.handleChange(e, processIndex)}></Input>
+                                                                                    <Input placeholder="Subtypen benennen" onKeyDown={((e) => this.handleKeyDown(e, processIndex, "sub"))} onChange={(e) => this.handleChange(e, processIndex)}></Input>
                                                                                     :
                                                                                     <ButtonText>Subtypen hinzufügen</ButtonText>
                                                                                 }
@@ -248,7 +248,7 @@ class Netzplan extends React.Component {
                                                     <Wrapper>
                                                         <Outline onClick={showInput[data.length] === true ? null : () => this.showInput(data.length)} >
                                                             {showInput[data.length] === true ?
-                                                                <Input placeholder="Prozessschritt bennen" onKeyDown={((e) => this.handleKeyDown(e, data.length, "main"))} onChange={(e) => this.handleChange(e, data.length)}></Input>
+                                                                <Input placeholder="Prozessschritt benennen" onKeyDown={((e) => this.handleKeyDown(e, data.length, "main"))} onChange={(e) => this.handleChange(e, data.length)}></Input>
                                                                 :
                                                                 <ButtonText>Prozessschritt hinzufügen</ButtonText>
                                                             }
