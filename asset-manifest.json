@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/seminar-proto/static/css/main.b55cbedb.chunk.css",
-    "main.js": "/seminar-proto/static/js/main.013675e5.chunk.js",
-    "main.js.map": "/seminar-proto/static/js/main.013675e5.chunk.js.map",
+    "main.js": "/seminar-proto/static/js/main.35d10bb9.chunk.js",
+    "main.js.map": "/seminar-proto/static/js/main.35d10bb9.chunk.js.map",
     "runtime-main.js": "/seminar-proto/static/js/runtime-main.b91568cd.js",
     "runtime-main.js.map": "/seminar-proto/static/js/runtime-main.b91568cd.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/seminar-proto/static/css/2.b0bb7f2c.chunk.css",
     "static/js/2.505820b8.chunk.js": "/seminar-proto/static/js/2.505820b8.chunk.js",
     "static/js/2.505820b8.chunk.js.map": "/seminar-proto/static/js/2.505820b8.chunk.js.map",
     "index.html": "/seminar-proto/index.html",
-    "precache-manifest.31c6d571c3ef029b6fec945ad43ca010.js": "/seminar-proto/precache-manifest.31c6d571c3ef029b6fec945ad43ca010.js",
+    "precache-manifest.3670d8a57b3b97f4a103052f68e66d6a.js": "/seminar-proto/precache-manifest.3670d8a57b3b97f4a103052f68e66d6a.js",
     "service-worker.js": "/seminar-proto/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/seminar-proto/static/css/2.b0bb7f2c.chunk.css.map",
     "static/css/main.b55cbedb.chunk.css.map": "/seminar-proto/static/css/main.b55cbedb.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.b0bb7f2c.chunk.css",
     "static/js/2.505820b8.chunk.js",
     "static/css/main.b55cbedb.chunk.css",
-    "static/js/main.013675e5.chunk.js"
+    "static/js/main.35d10bb9.chunk.js"
   ]
 }
