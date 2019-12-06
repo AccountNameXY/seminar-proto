@@ -18,7 +18,7 @@ class ByeScreen extends React.Component {
                 <Col>
                     <Title>Feedback</Title>
                     <Text>Vielen Dank, dass Sie an diesem Experiment teilgenommen haben. </Text>
-                    <Text>Uns ist es wichtig Feedback zu unserem Prototyp zu erhalten.Daher haben wir hierfür eine Umfrage eingerichtet.</Text>
+                    <Text>Uns ist es wichtig Feedback zu unserem Prototyp zu erhalten. Daher haben wir hierfür eine Umfrage eingerichtet.</Text>
 
                     <Button onClick={this.handleClick}>Zur Umfrage</Button>
 

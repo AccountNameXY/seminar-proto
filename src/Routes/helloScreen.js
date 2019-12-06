@@ -14,23 +14,23 @@ class HelloScreen extends React.Component {
     render() {
         return (
             <Col>
-                <Title>Herzlich Willkommen</Title>
+                <Title>Herzlich willkommen</Title>
                 <Text>
-                    Wir sind ein Team aus Studenten der TU Darmstadt und haben aufbauend auf dem Warenwirtschaftssytem von Pickware einen<br />
+                    Wir sind ein Team aus Studenten der TU Darmstadt und haben aufbauend auf dem Warenwirtschaftssystem von Pickware einen<br />
                     Prototyp erstellt, der helfen soll, Individualisierungsprozesse zu erfassen und zu visualisieren. Dabei könnte es sich um Personalisierungs- und Herstellungsprozesse handeln.<br />
                     <br />
-                    Der Prototyp beinhaltet zwei unterschiedliche Arten Individualisierungsschritte abzubilden.
+                    Der Prototyp beinhaltet zwei unterschiedliche Arten, Individualisierungsschritte abzubilden.
                     <br />
                     Die erste Variante konzentriert sich darauf, den Ablauf aller Schritte zu visualisieren und automatisch zu organisieren.
                     <br />
                     Die zweite Variante lässt Sie alle Möglichkeiten selbst organisieren. Dabei nutzen Sie ein Drag-and-Drop-System.
                     <br />
-                    Um die beiden Varianten zu testen, haben wir uns einen Use Case ausgedacht, den Sie mit dem Prototyp abbilden sollen.
+                    Um die beiden Varianten zu testen, haben wir uns einen Usecase ausgedacht, den Sie mit dem Prototyp abbilden sollen.
                     <br />
-                    Falls Sie über die Aufgabe hinaus weitere Prozessschritte abbilden möchten, können sie dies natürlich auch sehr gerne tun.
+                    Falls Sie über die Aufgabe hinaus weitere Prozessschritte abbilden möchten, können Sie dies natürlich auch sehr gerne tun.
                     <br />
                     <br />
-                    Viel Spaß
+                    Viel Spaß!
                 </Text>
                 <Row>
                     {/* <Col>
