@@ -124,7 +124,7 @@ class BruteForce extends React.Component {
                                                                                     {step.name !== "" ?
                                                                                         <ButtonText>{step.name}</ButtonText>
                                                                                         :
-                                                                                        <Input onChange={this.handleInput.bind(this)} placeholder="Benne Prozesschritt..." onBlur={() => this.addName(index)} onKeyDown={this.keyPressed} />
+                                                                                        <Input onChange={this.handleInput.bind(this)} placeholder="Benenne Prozesschritt..." onBlur={() => this.addName(index)} onKeyDown={this.keyPressed} />
                                                                                     }
                                                                                     <Frame>
                                                                                         <Dot src="dot.png" />
