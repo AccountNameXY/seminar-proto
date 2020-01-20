@@ -11,6 +11,11 @@ class BruteForce extends React.Component {
         this.props = props
         this.state = {
             steps: [
+                // { name: "Siebdruck", id: "item-0", substeps: Array(0) },
+                // { name: "digitaler Direktdruck", id: "item-1", substeps: Array(0) },
+                // { name: "Bestickt", id: "item-2", substeps: Array(0) },
+                // { name: "Qualitätscheck", id: "item-3", substeps: Array(0) }
+                // 
                 // { name: "Prozesschritt1", id: "item-0" }, { name: "Prozesschritt2", id: "item-1" }, { name: "Prozesschritt3", id: "item-2" }
             ],
             processes: [
@@ -38,6 +43,7 @@ class BruteForce extends React.Component {
 
 
     render() {
+        console.log(this.state);
         const { steps, processes } = this.state
         return (
             <React.Fragment>

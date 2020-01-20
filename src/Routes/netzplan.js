@@ -95,19 +95,23 @@ class Netzplan extends React.Component {
         this.state = {
             inputValue: [],
             showInput: [],
-            showNetzplan: false
+            showNetzplan: false,
+            data: [
+
+            ]
         }
         this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount() {
-        this.setState({
-            data: data
-        })
+        // this.setState({
+        //     data: data
+        // })
     }
 
 
     render() {
+        console.log(this.state);
         var { data, showInput, showNetzplan } = this.state
         return (
             <Background>

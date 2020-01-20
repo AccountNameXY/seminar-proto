@@ -19,6 +19,7 @@ class Graph extends React.Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <ReactEcharts
                 option={this.getOption()}
